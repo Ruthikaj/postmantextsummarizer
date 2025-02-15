@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Multi-Lingual Text Summarizer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <header>
+            <h1>Multi-Lingual Text Summarizer</h1>
+            <p class="subtitle">Summarize text in multiple languages with ease</p>
+        </header>
+        
+        <main>
+            <div class="input-section">
+                <div class="language-selector">
+                    <label for="language-select">Select Language:</label>
+                    <select id="language-select">
+                        <option value="English">🇬🇧 English</option>
+                        <option value="Hindi">🇮🇳 Hindi</option>
+                        <option value="Bengali">🇧🇩 Bengali</option>
+                        <option value="Telugu">🇮🇳 Telugu</option>
+                        <option value="Tamil">🇮🇳 Tamil</option>
+                        <option value="Marathi">🇮🇳 Marathi</option>
+                        <option value="Gujarati">🇮🇳 Gujarati</option>
+                        <option value="Kannada">🇮🇳 Kannada</option>
+                        <option value="Malayalam">🇮🇳 Malayalam</option>
+                        <option value="Punjabi">🇮🇳 Punjabi</option>
+                        <option value="Odia">🇮🇳 Odia</option>
+                        <option value="Assamese">🇮🇳 Assamese</option>
+                        <option value="Urdu">🇵🇰 Urdu</option>
+                    </select>
+                </div>
+                
+                <div class="text-input-container">
+                    <textarea id="input-text" placeholder="Enter your text here (minimum 100 words)..." rows="10"></textarea>
+                    <div class="word-counter">Words: <span id="word-count">0</span></div>
+                </div>
+                
+                <button id="summarize-btn" class="animate__animated">
+                    <span class="btn-text">Summarize</span>
+                    <div class="loader"></div>
+                </button>
+            </div>
+
+            <div class="output-section">
+                <h2>Summary</h2>
+                <div id="summary-output" class="summary-container"></div>
+                <button id="copy-btn" class="secondary-btn" style="display: none;">
+                    Copy Summary
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <div id="error-modal" class="modal">
+        <div class="modal-content animate__animated animate__fadeInDown">
+            <span class="close">&times;</span>
+            <p id="error-message"></p>
+        </div>
+    </div>
+
+    <div id="progress-bar" class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
